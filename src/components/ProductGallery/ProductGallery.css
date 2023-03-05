@@ -87,11 +87,11 @@
 }
 
 .modal-prev-btn {
-    left: -1.5%;
+    left: -4%;
 }
 
 .modal-next-btn {
-    right: -1.5%;
+    right: -4%;
 }
 
 @media (max-width: 780px) {
@@ -115,8 +115,8 @@
     border: none;
     background: none;
     filter: brightness(100);
-    right: 2%;
-    top: -3%;
+    right: -1%;
+    top: -5%;
     cursor: pointer;
 }
 
