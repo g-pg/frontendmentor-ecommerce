@@ -28,14 +28,14 @@ export default function CartBtn() {
 
 	return (
 		<>
-			<button className="cart-btn-container black-svg-hover" onClick={toggleCart}>
-				<img src={cartIcon} alt="Cart icon" className="cart-icon" />
+			<button className="cart-btn-container" onClick={toggleCart}>
+				<img src={cartIcon} alt="Cart icon" className="cart-icon black-svg-hover" />
 				{itemsCounter > 0 && <div className="cart-btn-counter">{itemsCounter}</div>}
 			</button>
 			{showCart && (
 				<div className="cart-btn--popup">
 					<p className="cart-btn-popup--title">Cart</p>
-					<div className="cart-popup-itens-container">
+					<div className="cart-popup-items-container">
 						{cartItems.length > 0 ? (
 							cartItems.map((el) => {
 								return (
@@ -49,8 +49,8 @@ export default function CartBtn() {
 						) : (
 							<p className="cart-popup-empty">Your cart is empty.</p>
 						)}
-						{cartItems.length > 0 && <PrimaryBtn content={"Checkout"} />}
 					</div>
+					{cartItems.length > 0 && <PrimaryBtn content={"Checkout"} />}
 				</div>
 			)}
 		</>
