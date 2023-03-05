@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Cart from "./pages/Cart/Cart";
 import Product from "./pages/Product/Product";
+import Attribution from "./components/Attribution/Attribution";
 import { CartProvider } from "./context/CartContext";
 import { MobileProvider } from "./context/MobileContext";
 function App() {
@@ -19,6 +20,7 @@ function App() {
 							element={<Navigate replace to="/product/1" />}
 						></Route>
 					</Routes>
+					<Attribution />
 				</CartProvider>
 			</MobileProvider>
 		</>
