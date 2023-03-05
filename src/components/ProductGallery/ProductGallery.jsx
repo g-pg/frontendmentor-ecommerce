@@ -1,0 +1,108 @@
+import React, { useRef, useState, useEffect } from "react";
+
+import "./ProductGallery.css";
+import prevIcon from "../../assets/svg/icon-previous.svg";
+import nextIcon from "../../assets/svg/icon-next.svg";
+import closeIcon from "../../assets/svg/icon-close.svg";
+
+export default function ProductGallery({ product, mainPicture, setMainPicture, setShowModal }) {
+	const thumbStyles = {
+		outline: "3px solid var(--primary)",
+	};
+
+	function handleShowModal() {
+		if (setShowModal) {
+			setShowModal(true);
+		}
+		return;
+	}
+	return (
+		<div className="product-images-column">
+			<img
+				src={product.pics[mainPicture]}
+				alt="Product picture"
+				className="product-main-img"
+				onClick={handleShowModal}
+			/>
+			<div className="product-thumbnails">
+				{product.pics.map((picture, index) => {
+					return (
+						<div
+							className="thumb-container"
+							onClick={() => setMainPicture(index)}
+							key={`thumb_${index}`}
+						>
+							<img
+								src={picture}
+								alt="Product picture"
+								style={index === mainPicture ? thumbStyles : {}}
+							/>
+						</div>
+					);
+				})}
+			</div>
+		</div>
+	);
+}
+
+export function ProductModal({ product, setShowModal, showModal }) {
+	const [mainPicture, setMainPicture] = useState(0);
+
+	const modalRef = useRef(null);
+
+	function handleClickOutside(event) {
+		if (modalRef.current && !modalRef.current.contains(event.target)) {
+			setShowModal(false);
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener("click", handleClickOutside, true);
+
+		return () => {
+			document.removeEventListener("click", handleClickOutside, true);
+		};
+	}, [modalRef]);
+
+	return (
+		<>
+			<div className="modal-wrapper" ref={modalRef}>
+				<button className="modal-close-btn black-svg-hover">
+					<img
+						src={closeIcon}
+						alt="Close icon"
+						onClick={() => setShowModal(false)}
+						className="black-svg-hover"
+					/>
+				</button>
+				<button
+					className="modal-prev-btn "
+					onClick={() =>
+						setMainPicture((prevPicture) =>
+							prevPicture >= 1 ? prevPicture - 1 : product.pics.length - 1
+						)
+					}
+				>
+					<img src={prevIcon} alt="Previous picture" className="black-svg-hover" />
+				</button>
+				<ProductGallery
+					product={product}
+					setMainPicture={setMainPicture}
+					mainPicture={mainPicture}
+					setShowModal={setShowModal}
+				/>
+				;
+				<button
+					className="modal-next-btn"
+					onClick={() =>
+						setMainPicture((prevPicture) =>
+							prevPicture <= 2 ? prevPicture + 1 : 0
+						)
+					}
+				>
+					<img src={nextIcon} alt="Next picture" className="black-svg-hover" />
+				</button>
+			</div>
+		</>
+	);
+}

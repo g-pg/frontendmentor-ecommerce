@@ -1,0 +1,17 @@
+.profile-btn-container {
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+
+.profile-btn--user-avatar {
+    transition: inherit;
+    border-radius: 100%;
+    max-width: 40px;
+    border: 2px solid transparent
+}
+
+
+.profile-btn--user-avatar:hover {
+    border: 2px solid var(--primary)
+}

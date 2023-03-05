@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+/* FIm do reset */
+
+:root {
+
+  /* Primary colors */
+
+  --primary: hsl(26, 100%, 55%);
+  --primary-pale: hsl(25, 100%, 94%);
+  /* Secondary */
+  --very-dark: hsl(220, 13%, 13%);
+  --dark-grayish: hsl(219, 9%, 45%);
+  --grayish: hsl(220, 14%, 75%);
+  --light-grayish: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+section {
+  padding-inline: 2rem;
+}
