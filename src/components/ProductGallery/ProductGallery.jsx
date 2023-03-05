@@ -54,6 +54,12 @@ export default function ProductGallery({
 		}
 		return;
 	}
+
+	useEffect(() => {
+		if (isMobile) {
+			setShowModal(false);
+		}
+	}, [isMobile]);
 	return (
 		<div className="product-images-column">
 			<div className="product-main-img-container">

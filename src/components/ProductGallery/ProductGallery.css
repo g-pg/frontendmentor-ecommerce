@@ -58,14 +58,15 @@
 }
 
 .modal-wrapper {
-    padding: 1rem;
+    /* padding: 1rem; */
     max-width: 600px;
     position: absolute;
     transform: translate(50%, -50%);
     top: 50%;
     right: 50%;
-    background: rgb(0, 0, 0, 0.7);
+    background: rgb(0, 0, 0, .7);
     box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .7);
+    backdrop-filter: blur(1px);
 }
 
 .modal-prev-btn,
@@ -80,7 +81,7 @@
     justify-content: center;
     border-radius: 50%;
     position: absolute;
-    top: 35%;
+    top: 36%;
     cursor: pointer;
     z-index: 10;
 }
