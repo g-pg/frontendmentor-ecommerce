@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
+import Header from "./components/Header/Header";
 import Cart from "./pages/Cart/Cart";
 import Product from "./pages/Product/Product";
 import { CartProvider } from "./context/CartContext";
@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			<CartProvider>
-				<Nav />
+				<Header />
 				<Routes>
 					<Route path="/" element={<Navigate replace to="/product" />}></Route>
 					<Route path="/product/:id" element={<Product />}></Route>

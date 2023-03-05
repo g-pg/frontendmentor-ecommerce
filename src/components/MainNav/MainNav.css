@@ -1,0 +1,26 @@
+/* Os estilos do burger estão no css do BurgerMainNav */
+
+.main-nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+.main-nav-ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav-ul li {
+    color: var(--dark-grayish);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding-block: 1.5rem;
+    border-bottom: 3px solid transparent;
+    border-top: 10px solid transparent;
+
+}
+
+.main-nav-ul li:hover {
+    border-bottom: 3px solid var(--primary)
+}

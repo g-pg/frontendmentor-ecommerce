@@ -31,6 +31,18 @@
     gap: 0.8rem;
 }
 
+@media (max-width: 780px) {
+    .cart-btn--popup {
+        min-width: unset;
+        width: 90%;
+        /* min-height: 280px; */
+        top: 100px;
+        left: 5%;
+        bottom: unset;
+        transform: unset;
+    }
+}
+
 .cart-popup-itens-container {
     margin-top: .3rem;
     display: flex;

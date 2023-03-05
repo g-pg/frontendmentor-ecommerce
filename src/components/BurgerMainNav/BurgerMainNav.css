@@ -1,0 +1,54 @@
+.burger-nav {
+    position: relative;
+}
+
+.burger-btn,
+.burger-close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.burger-close-btn {
+    padding-left: 1rem
+}
+
+.burger-nav-container {
+    background: var(--white);
+    min-height: 100dvh;
+    width: 70%;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 999;
+    padding-block: 1.8rem;
+    transform: translateX(-100%);
+    transition: .3s ease-in-out
+}
+
+.main-nav-ul-burger {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.8rem; */
+
+
+}
+
+.main-nav-ul-burger li {
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.8rem 1rem;
+}
+
+.main-nav-ul-burger li:hover {
+    color: var(--primary)
+}
+
+.main-nav-ul-burger li:active {
+    background: var(--primary);
+    color: var(--white)
+}
