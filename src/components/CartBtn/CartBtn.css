@@ -1,6 +1,6 @@
 .cart-btn-container {
     cursor: pointer;
-    max-width: 30px;
+    min-width: 20px;
     position: relative;
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { redirect, useNavigate, useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import { numToPrice } from "../../utils/numToPrice";
 import AddToCart from "../../components/AddToCart/AddToCart";
 import ProductGallery, { ProductModal } from "../../components/ProductGallery/ProductGallery";
@@ -10,20 +10,16 @@ import CartContext from "../../context/CartContext";
 
 export default function Product() {
 	const param = useParams(); //id
-	const navigate = useNavigate();
-	const product = products.find((el) => el.id === Number(param.id));
 
-	// if (param.id > 1) {
-	// 	return navigate("/product/1");
-	// }
+	const product = products.find((el) => el.id === Number(param.id));
 
 	const [mainPicture, setMainPicture] = useState(0);
 	const [showModal, setShowModal] = useState(false);
 
 	return (
 		<>
-			<section className="product-section">
-				<div className="container">
+			<section>
+				<div className="container  product-container">
 					<div className="product-wrapper">
 						<ProductGallery
 							product={product}
@@ -31,6 +27,7 @@ export default function Product() {
 							mainPicture={mainPicture}
 							setShowModal={setShowModal}
 						/>
+
 						<div className="product-info-column">
 							<h3 className="company-name">Sneaker Company</h3>
 							<h2 className="product-name">{product.name}</h2>
@@ -42,13 +39,15 @@ export default function Product() {
 										: numToPrice(product.price)}
 								</p>
 								{product.discount && (
-									<p className="product-discount">
-										{product.discount * 100}%
-									</p>
+									<>
+										<p className="product-discount">
+											{product.discount * 100}%
+										</p>
+										<p className="product-original-price">
+											{numToPrice(product.price)}
+										</p>
+									</>
 								)}
-								<p className="product-original-price">
-									{numToPrice(product.price)}
-								</p>
 							</div>
 							<AddToCart productId={product.id} />
 						</div>

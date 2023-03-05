@@ -11,7 +11,7 @@
 .product-main-img {
     margin: 0 auto;
     cursor: pointer;
-    /* position: relative; */
+    min-width: 250px;
 }
 
 .product-thumbnails {
@@ -101,4 +101,14 @@
 .black-svg-hover:hover {
     filter: brightness(0);
     filter: invert(48%) sepia(79%) saturate(560%) hue-rotate(342deg) brightness(103%) contrast(106%);
+}
+
+@media screen and (max-width: 780px) {
+    .thumb-container {
+        display: none;
+    }
+
+    .product-images-column img {
+        border-radius: unset;
+    }
 }

@@ -35,3 +35,18 @@
     width: 100%;
     padding: 1rem;
 }
+
+.product-set-quantity-btn img {
+    min-width: 10px;
+}
+
+@media (max-width: 780px) {
+    .product-add-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-add-counter-wrapper {
+        width: 100%;
+    }
+}
