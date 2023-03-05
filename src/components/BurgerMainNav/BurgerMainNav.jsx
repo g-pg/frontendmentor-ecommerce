@@ -15,11 +15,14 @@ export default function BurgerMainNav() {
 
 	return (
 		<nav className="burger-nav">
-			<button className="burger-btn" onClick={() => setShowBurger(true)}>
+			<button className="burger-btn black-svg-hover" onClick={() => setShowBurger(true)}>
 				<img src={menuIcon} alt="Buger menu" />
 			</button>
 			<div className="burger-nav-container" style={burgerOpenStyles}>
-				<button className="burger-close-btn" onClick={() => setShowBurger(false)}>
+				<button
+					className="burger-close-btn black-svg-hover"
+					onClick={() => setShowBurger(false)}
+				>
 					<img src={closeBtn} alt="" />
 				</button>
 				<MainNav type="burger" />

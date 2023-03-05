@@ -3,6 +3,7 @@
     grid-template-columns: 45px 1fr 12px;
     align-items: center;
     gap: 0.8rem;
+    width: 100%;
 }
 
 .cart-popup-item-picture {

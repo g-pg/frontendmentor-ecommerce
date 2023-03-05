@@ -1,7 +1,10 @@
 .cart-btn-container {
+    border: none;
+    background: none;
     cursor: pointer;
     min-width: 20px;
     position: relative;
+    padding: 0;
 }
 
 .cart-btn-icon:hover {
@@ -18,7 +21,7 @@
 .cart-btn--popup {
     position: absolute;
     min-width: 300px;
-    min-height: 150px;
+    min-height: 200px;
     bottom: 0;
     transform: translate(-80%, 100%);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 12px;
@@ -54,7 +57,7 @@
 }
 
 .cart-popup-empty {
-    margin: 15px auto;
+    margin: 45px auto;
     color: var(--dark-grayish);
     font-weight: 700;
     font-size: 0.9rem;

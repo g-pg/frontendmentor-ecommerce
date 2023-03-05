@@ -85,7 +85,7 @@
     .product-wrapper {
         flex-direction: column;
         width: 100%;
-        margin-top: 0;
+        margin-top: 35px;
         gap: 0;
     }
 

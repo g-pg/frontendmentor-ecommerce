@@ -14,6 +14,10 @@
     min-width: 250px;
 }
 
+.product-main-img-container {
+    position: relative;
+}
+
 .product-thumbnails {
     /* margin-top: 2rem; */
     display: flex;
@@ -78,6 +82,7 @@
     position: absolute;
     top: 35%;
     cursor: pointer;
+    z-index: 10;
 }
 
 .modal-prev-btn {
@@ -86,6 +91,22 @@
 
 .modal-next-btn {
     right: -1.5%;
+}
+
+@media (max-width: 780px) {
+
+    .modal-prev-btn,
+    .modal-next-btn {
+        top: 45%;
+    }
+
+    .modal-prev-btn {
+        left: 1%;
+    }
+
+    .modal-next-btn {
+        right: 1%;
+    }
 }
 
 .modal-close-btn {

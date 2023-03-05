@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 
 import "../CartBtn/CartBtn";
@@ -7,21 +7,10 @@ import ProfileBtn from "../ProfileBtn/ProfileBtn";
 import { NavLink } from "react-router-dom";
 import MainNav from "../MainNav/MainNav";
 import BurgerMainNav from "../BurgerMainNav/BurgerMainNav";
+import MobileContext from "../../context/MobileContext";
 
 export default function Header() {
-	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		function handleResize() {
-			window.innerWidth < 780 ? setIsMobile(true) : setIsMobile(false);
-		}
-
-		window.addEventListener("resize", handleResize);
-		handleResize(); //executa pelo menos uma vez para checar o window size inicial
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
+	const { isMobile } = useContext(MobileContext);
 
 	return (
 		<header>

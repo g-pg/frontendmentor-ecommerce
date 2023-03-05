@@ -26,6 +26,7 @@ export default function Product() {
 							setMainPicture={setMainPicture}
 							mainPicture={mainPicture}
 							setShowModal={setShowModal}
+							showModal={showModal}
 						/>
 
 						<div className="product-info-column">

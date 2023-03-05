@@ -28,10 +28,10 @@ export default function CartBtn() {
 
 	return (
 		<>
-			<div className="cart-btn-container" onClick={toggleCart}>
+			<button className="cart-btn-container black-svg-hover" onClick={toggleCart}>
 				<img src={cartIcon} alt="Cart icon" className="cart-icon" />
 				{itemsCounter > 0 && <div className="cart-btn-counter">{itemsCounter}</div>}
-			</div>
+			</button>
 			{showCart && (
 				<div className="cart-btn--popup">
 					<p className="cart-btn-popup--title">Cart</p>
