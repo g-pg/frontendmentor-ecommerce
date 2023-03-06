@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import "./Header.css";
+import { NavLink } from "react-router-dom";
 
+import "./Header.css";
 import "../CartBtn/CartBtn";
+
+import Logo from "../../assets/svg/logo.svg";
 import CartBtn from "../CartBtn/CartBtn";
 import ProfileBtn from "../ProfileBtn/ProfileBtn";
-import { NavLink } from "react-router-dom";
 import MainNav from "../MainNav/MainNav";
 import BurgerMainNav from "../BurgerMainNav/BurgerMainNav";
 import MobileContext from "../../context/MobileContext";
@@ -18,7 +20,7 @@ export default function Header() {
 				<div className="header-wrapper">
 					{isMobile && <BurgerMainNav />}
 					<NavLink className="logo-navlink" to="/">
-						<h1 className="header-logo">sneakers</h1>
+						<img src={Logo} alt="Sneakers logo" />
 					</NavLink>
 					{!isMobile && (
 						<nav className="main-nav-wrapper">
