@@ -15,7 +15,10 @@ function App() {
 						<Route
 							path="/frontendmentor-ecommerce"
 							element={
-								<Navigate replace to="/frontendmentor-ecommerce/product" />
+								<Navigate
+									replace
+									to="/frontendmentor-ecommerce/product/1"
+								/>
 							}
 						></Route>
 						<Route
