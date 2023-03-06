@@ -13,27 +13,14 @@ function App() {
 					<Header />
 					<Routes>
 						<Route
-							path="/frontendmentor-ecommerce"
-							element={
-								<Navigate
-									replace
-									to="/frontendmentor-ecommerce/product/1"
-								/>
-							}
+							path="/"
+							element={<Navigate replace to="/product/1" />}
 						></Route>
-						<Route
-							path="/frontendmentor-ecommerce/product/:id"
-							element={<Product />}
-						></Route>
+						<Route path="/product/:id" element={<Product />}></Route>
 						<Route path="/cart" element={<Cart />}></Route>
 						<Route
 							path="*"
-							element={
-								<Navigate
-									replace
-									to="/frontendmentor-ecommerce/product/1"
-								/>
-							}
+							element={<Navigate replace to="/product/1" />}
 						></Route>
 					</Routes>
 					<Attribution />
