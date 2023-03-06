@@ -31,7 +31,7 @@ export default function Product() {
 
 						<div className="product-info-column">
 							<p className="company-name">Sneaker Company</p>
-							<h2 className="product-name">{product.name}</h2>
+							<h1 className="product-name">{product.name}</h1>
 							<p className="product-desc">{product.description}</p>
 							<div className="product-price-wrapper">
 								<p className="product-final-price">
