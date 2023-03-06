@@ -17,7 +17,7 @@ export default function Product() {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
-		<>
+		<main>
 			<section>
 				<div className="container  product-container">
 					<div className="product-wrapper">
@@ -30,7 +30,7 @@ export default function Product() {
 						/>
 
 						<div className="product-info-column">
-							<h3 className="company-name">Sneaker Company</h3>
+							<p className="company-name">Sneaker Company</p>
 							<h2 className="product-name">{product.name}</h2>
 							<p className="product-desc">{product.description}</p>
 							<div className="product-price-wrapper">
@@ -64,6 +64,6 @@ export default function Product() {
 					setShowModal={setShowModal}
 				/>
 			)}
-		</>
+		</main>
 	);
 }

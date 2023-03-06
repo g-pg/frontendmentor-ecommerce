@@ -33,6 +33,7 @@
     font-size: clamp(0.7rem, 1vw, 1rem);
     color: var(--primary);
     letter-spacing: 0.8px;
+    font-weight: 700;
 }
 
 .product-name {
