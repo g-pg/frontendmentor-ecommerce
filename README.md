@@ -39,4 +39,4 @@ Assim, é possível adicionar qualquer produto com id único no products.json, e
 
 # 🌎 Acesso
 
-A aplicação está hospedada no Github Pages e pode ser acessada neste [link](https://g-pg.github.io/frontendmentor-ecommerce/index.html).
+A aplicação está hospedada no Github Pages e pode ser acessada neste [link](https://g-pg-frontendmentor-ecommerce.netlify.app/product/1).
