@@ -6,7 +6,8 @@
     color: white;
     cursor: pointer;
     border: none;
-    font-size: clamp(0.8rem, 1vw, 1rem)
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px;
 }
 
 .primary-btn img {
