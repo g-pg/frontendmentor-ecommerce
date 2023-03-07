@@ -110,6 +110,7 @@ export function ProductModal({ product, setShowModal }) {
 
 	const modalRef = useHideElement(setShowModal);
 
+	console.log(modalRef);
 	return (
 		<>
 			<div className="modal-wrapper" ref={modalRef}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useHideElement from "../../utils/useHideElement";
 
 import { CartItemPop } from "../CartItem/CartItem";
@@ -10,7 +10,6 @@ import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 export default function CartBtn() {
 	const [showCart, setShowCart] = useState(false);
 	const [itemsCounter, setItemsCounter] = useState(0);
-	// const cartRef = useRef(null);
 	const { cartItems } = useContext(CartContext);
 	const cartRef = useHideElement(setShowCart);
 
@@ -26,32 +25,18 @@ export default function CartBtn() {
 		return sum;
 	}
 
-	// function handleClickOutside(event) {
-	// 	if (cartRef.current && !cartRef.current.contains(event.target)) {
-	// 		setShowCart(false);
-	// 	}
-	// }
-
-	// useEffect(() => {
-	// 	document.addEventListener("click", handleClickOutside, true);
-
-	// 	return () => {
-	// 		document.removeEventListener("click", handleClickOutside, true);
-	// 	};
-	// }, [cartRef]);
-
 	useEffect(() => {
 		setItemsCounter(sumItems());
 	}, [cartItems]);
 
 	return (
 		<>
-			<button className="cart-btn-container" onClick={toggleCart}>
+			<button className="cart-btn-container" onClick={toggleCart} ref={cartRef}>
 				<img src={cartIcon} alt="Cart icon" className="cart-icon black-svg-hover" />
 				{itemsCounter > 0 && <div className="cart-btn-counter">{itemsCounter}</div>}
 			</button>
 			{showCart && (
-				<div className="cart-btn--popup" ref={cartRef}>
+				<div className="cart-btn--popup">
 					<p className="cart-btn-popup--title">Cart</p>
 					<div className="cart-popup-items-container">
 						{cartItems.length > 0 ? (
