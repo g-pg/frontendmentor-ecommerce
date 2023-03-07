@@ -1,4 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
+import useHideElement from "../../utils/useHideElement";
+
 import { CartItemPop } from "../CartItem/CartItem";
 import "./CartBtn.css";
 import cartIcon from "../../assets/svg/icon-cart.svg";
@@ -8,7 +10,9 @@ import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 export default function CartBtn() {
 	const [showCart, setShowCart] = useState(false);
 	const [itemsCounter, setItemsCounter] = useState(0);
+	// const cartRef = useRef(null);
 	const { cartItems } = useContext(CartContext);
+	const cartRef = useHideElement(setShowCart);
 
 	function toggleCart() {
 		setShowCart((prevShowCart) => !prevShowCart);
@@ -22,6 +26,20 @@ export default function CartBtn() {
 		return sum;
 	}
 
+	// function handleClickOutside(event) {
+	// 	if (cartRef.current && !cartRef.current.contains(event.target)) {
+	// 		setShowCart(false);
+	// 	}
+	// }
+
+	// useEffect(() => {
+	// 	document.addEventListener("click", handleClickOutside, true);
+
+	// 	return () => {
+	// 		document.removeEventListener("click", handleClickOutside, true);
+	// 	};
+	// }, [cartRef]);
+
 	useEffect(() => {
 		setItemsCounter(sumItems());
 	}, [cartItems]);
@@ -33,7 +51,7 @@ export default function CartBtn() {
 				{itemsCounter > 0 && <div className="cart-btn-counter">{itemsCounter}</div>}
 			</button>
 			{showCart && (
-				<div className="cart-btn--popup">
+				<div className="cart-btn--popup" ref={cartRef}>
 					<p className="cart-btn-popup--title">Cart</p>
 					<div className="cart-popup-items-container">
 						{cartItems.length > 0 ? (

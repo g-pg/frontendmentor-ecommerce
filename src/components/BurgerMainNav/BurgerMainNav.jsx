@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import useHideElement from "../../utils/useHideElement";
 import "./BurgerMainNav.css";
 import MainNav from "../MainNav/MainNav";
 import menuIcon from "../../assets/svg/icon-menu.svg";
 import closeBtn from "../../assets/svg/icon-close.svg";
 export default function BurgerMainNav() {
 	const [showBurger, setShowBurger] = useState(false);
+
+	const burgerRef = useHideElement(setShowBurger);
 
 	const burgerOpenStyles = showBurger
 		? {
@@ -14,7 +17,7 @@ export default function BurgerMainNav() {
 		: {};
 
 	return (
-		<nav className="burger-nav">
+		<nav className="burger-nav" ref={burgerRef}>
 			<button className="burger-btn black-svg-hover" onClick={() => setShowBurger(true)}>
 				<img src={menuIcon} alt="Buger menu" />
 			</button>

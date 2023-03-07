@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
-
+import useHideElement from "../../utils/useHideElement";
 import MobileContext from "../../context/MobileContext";
 import "./ProductGallery.css";
 import prevIcon from "../../assets/svg/icon-previous.svg";
@@ -108,21 +108,7 @@ export default function ProductGallery({
 export function ProductModal({ product, setShowModal }) {
 	const [mainPicture, setMainPicture] = useState(0);
 
-	const modalRef = useRef(null);
-
-	function handleClickOutside(event) {
-		if (modalRef.current && !modalRef.current.contains(event.target)) {
-			setShowModal(false);
-		}
-	}
-
-	useEffect(() => {
-		document.addEventListener("click", handleClickOutside, true);
-
-		return () => {
-			document.removeEventListener("click", handleClickOutside, true);
-		};
-	}, [modalRef]);
+	const modalRef = useHideElement(setShowModal);
 
 	return (
 		<>

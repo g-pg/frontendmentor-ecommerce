@@ -67,6 +67,7 @@
     background: rgb(0, 0, 0, .7);
     box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .7);
     backdrop-filter: blur(1px);
+    z-index: 999;
 }
 
 .modal-prev-btn,
