@@ -78,6 +78,7 @@
     flex-basis: 100%;
     margin-top: 5px;
     font-size: 0.9rem;
+    text-decoration: line-through;
 }
 
 @media (max-width: 780px) {
