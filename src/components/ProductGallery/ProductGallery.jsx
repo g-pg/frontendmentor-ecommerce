@@ -134,6 +134,7 @@ export function ProductModal({ product, setShowModal }) {
 
 				<ProductNavBtn setMainPicture={setMainPicture} type={"next"} />
 			</div>
+			<div className="overlay"></div>
 		</>
 	);
 }
