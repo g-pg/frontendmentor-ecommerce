@@ -30,8 +30,8 @@ export default function CartBtn() {
 	}, [cartItems]);
 
 	return (
-		<>
-			<button className="cart-btn-container" onClick={toggleCart} ref={cartRef}>
+		<div ref={cartRef}>
+			<button className="cart-btn-container" onClick={toggleCart}>
 				<img src={cartIcon} alt="Cart icon" className="cart-icon black-svg-hover" />
 				{itemsCounter > 0 && <div className="cart-btn-counter">{itemsCounter}</div>}
 			</button>
@@ -56,6 +56,6 @@ export default function CartBtn() {
 					{cartItems.length > 0 && <PrimaryBtn content={"Checkout"} />}
 				</div>
 			)}
-		</>
+		</div>
 	);
 }
