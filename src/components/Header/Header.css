@@ -18,14 +18,11 @@
 }
 
 
-.header-logo {
-    font-weight: 700;
-    font-size: 2rem;
-}
-
 .logo-navlink {
     text-decoration: none;
     color: unset;
+    margin-top: 3px;
+    min-width: 100px;
 }
 
 .profile-nav-wrapper {
@@ -38,7 +35,7 @@
 
 @media (max-width: 780px) {
     .header-wrapper {
-        gap: 0.8rem;
+        gap: 1rem;
         position: fixed;
         z-index: 900;
         background: var(--white);
@@ -46,12 +43,13 @@
         height: 65px;
     }
 
-    .header-logo {
-        font-size: 1.8rem;
-        margin-top: -6px;
-    }
-
     .profile-nav-wrapper {
         max-width: 100px;
+        gap: 1rem;
+    }
+
+    .logo-navlink {
+        margin-top: 0;
+        margin-bottom: 3px;
     }
 }
