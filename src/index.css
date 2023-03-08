@@ -66,4 +66,15 @@ body {
   width: 100%;
   background: rgb(0, 0, 0, .7);
   z-index: 998;
+  animation: 0.2s fade linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
